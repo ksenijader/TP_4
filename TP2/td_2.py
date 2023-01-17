@@ -8,7 +8,7 @@ ADN_LIST=("A","C","G","T") #creating a list of possible nucleotides
 
 def adn_read(fastafile): #defining function name and its parameters
     """Function printing python version.""" #Adding a docstring
-    if fastafile.endswith((".faa",".fa")): #if given file ends with ".faa" or ".fa"
+    if fastafile.endswith((".faa",".fa",".fasta")): #if given file ends with ".faa" or ".fa"
         #print that the file is fasta file
         print(str(fastafile) + " is fasta file")
         #open the file in reading mode using utf-8 encoding
@@ -20,7 +20,7 @@ def adn_read(fastafile): #defining function name and its parameters
                 line_counter += 1 #add 1 to variable "line_counter"
 
                 if line[0] == ">": #if the first element of the line is ">"
-                    #store the line in "header" and remove last character which is "\n" 
+                    #store the line in "header" and remove last character which is "\n"
                     header = line.strip()
                 else: #otherwise
                     line = line.strip() #remove the last character of the line
